@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>VueJs Learning</title>
-</head>
- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-<body>
+
 	<div id="showmsg">
-		<p v-once>{{ message }} {{ getmeaage() }}</p>
-		<p>{{ message }}</p>
-
-		<p> <a v-bind:href="link">link</a></p>
-		<p v-html="html"></p>
+		<p> {{ count }}</p>
+		<!-- button action based on function -->
+		<button v-on:click="increase()">increse</button>  
+		<!-- button action based on not function -->
+		<button v-on:click="count--">decrese</button>  
 	</div>
-	
 
-<!-- <script src="vuejs.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script type="text/javascript">
 	new Vue({
 		el:"#showmsg",
 		data:{
-			message:"Learn Vue JS",
-			link:"https://www.vuejs.org",
-			html:"<a href='https://www.google.com/'>google</a>"
+			count:0,
 		},
 		methods:{
-			getmeaage(){
-				this.message = "function mesg";
+			increase(){
+				this.count++;
 			}
 		}
 	});
 </script>
-</body>
-</html>
 
 
